@@ -1,0 +1,42 @@
+:host {
+  width: 100%;
+}
+
+.c-profile-item {
+  position: relative;
+  &:hover {
+    cursor: pointer;
+  }
+  .c-profile-item__title {
+    font-weight: 600;
+  }
+  .c-profile-item__city-list {
+    color: gray;
+    font-size: 14px;
+    font-weight: 500;
+  }
+  .c-profile-item__close-button {
+    position: absolute;
+    top: 0;
+    right: 10px;
+    padding: 0 5px;
+    border-radius: 10px;
+    transition: all 0.2s ease-in-out;
+    &:hover {
+      background-color: lightgrey;
+    }
+  }
+
+  &.c-profile-item--text-white {
+    color: white;
+    .c-profile-item__city-list {
+      color: white;
+    }
+    .c-profile-item__close-button {
+      &:hover {
+        background-color: white;
+        color: black;
+      }
+    }
+  }
+}

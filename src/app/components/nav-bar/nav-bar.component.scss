@@ -1,0 +1,21 @@
+.c-nav-bar {
+  position: sticky;
+  top: 0;
+  left: 0;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  background-color: #1976d2;
+  color: white;
+  font-weight: 600;
+
+  .c-nav-bar__main-icon {
+    margin: 0 16px;
+    path {
+      transform: scale(0.1);
+    }
+  }
+  .c-nav-bar__title {
+    align-self: center;
+  }
+}

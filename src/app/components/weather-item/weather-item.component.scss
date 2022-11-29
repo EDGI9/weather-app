@@ -1,0 +1,28 @@
+:host {
+  width: 100%;
+}
+
+.c-weather-item {
+  display: flex;
+  flex-wrap: wrap;
+  .c-weather-item__name {
+    flex: 1;
+    font-weight: 500;
+  }
+  .c-weather-item__temperature {
+    flex: 1;
+    text-align: end;
+  }
+  .c-weather-item__name,
+  .c-weather-item__temperature {
+    font-size: 20px;
+  }
+  .c-weather-item__weather {
+    width: 100%;
+    color: gray;
+    text-transform: uppercase;
+    margin-top: 10px;
+    font-size: 14px;
+    font-weight: 500;
+  }
+}

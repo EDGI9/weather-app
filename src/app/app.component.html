@@ -1,0 +1,61 @@
+<style>
+  .content {
+    display: flex;
+    margin: 82px auto 32px;
+    padding: 0 16px;
+    max-width: 960px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 16px;
+  }
+  .s-sidebar {
+    float: left;
+    margin: 82px auto 32px;
+    padding: 0px 10px;
+  }
+  .u-horizontal-margin-1 {
+    margin: 10px;
+  }
+</style>
+
+<app-nav-bar></app-nav-bar>
+
+<app-sidebar class="s-sidebar">
+  <h3 class="u-horizontal-margin-1">Saved Profiles</h3>
+  <app-button buttonText="Save" (click)="onSaveProfile()"></app-button>
+  <app-card
+    extraClasses="c-card--blue "
+    *ngFor="let profileItem of profileItems"
+    (click)="onLoadProfile(profileItem)"
+  >
+    <app-profile-item
+      [profile-item]="profileItem"
+      extraClasses="c-profile-item--text-white"
+      (delete)="onDeleteProfile($event, profileItem)"
+    ></app-profile-item>
+  </app-card>
+</app-sidebar>
+
+<div class="content" role="main">
+  <div>
+    <app-search-input
+      (onSearchText)="onSearchWeather($event)"
+      (onSearchTextInput)="onSearchTextInput($event)"
+      [foundResult]="foundResult"
+    ></app-search-input>
+  </div>
+  <div class="card-container">
+    <app-card *ngFor="let weatherItem of weatherItems">
+      <app-weather-item [weather-item]="weatherItem"></app-weather-item>
+    </app-card>
+  </div>
+</div>
+
+<app-footer></app-footer>

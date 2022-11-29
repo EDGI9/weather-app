@@ -1,0 +1,22 @@
+<section class="c-search-input">
+  <form
+    [formGroup]="myForm"
+    (ngSubmit)="onSubmit()"
+    class="c-search-input__input-container"
+  >
+    <label for="searchInput" class="c-search-input__label">
+      Search for city
+    </label>
+    <input
+      formControlName="searchInput"
+      name="searchInput"
+      required
+      (input)="onSearchInput()"
+      class="c-search-input__input-field"
+    />
+    <app-button buttonType="submit" buttonText="Submit"></app-button>
+  </form>
+  <div class="c-search-input__search-results">
+    <span> City found: {{ foundResult.name }} </span>
+  </div>
+</section>

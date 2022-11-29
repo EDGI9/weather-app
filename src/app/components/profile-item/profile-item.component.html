@@ -1,0 +1,9 @@
+<article class="c-profile-item" [class]="extraClasses">
+  <h4 class="c-profile-item__title">
+    {{ profileItem.profileName }}
+  </h4>
+  <div class="c-profile-item__city-list">
+    Cities: {{ profileItem.cities.join(", ") }}
+  </div>
+  <span class="c-profile-item__close-button" (click)="onDelete($event)">X</span>
+</article>
